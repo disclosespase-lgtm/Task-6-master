@@ -18,8 +18,9 @@ public class CarService {
             new Car("Volga", 5, "Blue")
     ));
 
-    public List<Car> getCars(int count) {
-        if (count >= cars.size()) {
+    public List<Car> getCars(Integer count) {
+        int size = (count == null) ? cars.size() : count;
+        if (size >= cars.size()) {
             return cars;
         } else {
             return cars.stream()

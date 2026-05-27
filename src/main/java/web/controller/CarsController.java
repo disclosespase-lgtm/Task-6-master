@@ -17,8 +17,7 @@ public class CarsController {
 
     @GetMapping("/cars")
     public String cars(ModelMap model, @RequestParam(value = "count", required = false) Integer count) {
-        int size = (count == null) ? Integer.MAX_VALUE : count;
-        model.addAttribute("cars", carService.getCars(size));
+        model.addAttribute("cars", carService.getCars(count));
         return "cars";
     }
 }
